@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    command: npm run dev                      # runs next dev for hot reload
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app                                # mount source so edits update immediately
+      - /app/node_modules                      # ensure container node_modules used
+      - todos-data:/app/data                  # persist todos.json between restarts
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+      - DATABASE_URL=postgres://postgres:password@db:5432/tododb
+    stdin_open: true
+    tty: true
+
+volumes:
+  todos-data:

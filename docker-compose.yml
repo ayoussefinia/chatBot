@@ -1,0 +1,35 @@
+services:
+  web:
+    build: .
+    container_name: todo-app
+    command: npm run dev # runs next dev for hot reload
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app # mount source so edits update immediately
+
+      # - todos-data:/app/data                  # persist todos.json between restarts
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+      - DATABASE_URL=postgres://postgres:password@db:5432/tododb
+      - NEXTAUTH_SECRET=8d1f7f4a0197e0c98d327fb1c13b2a6b8a9f13a54d92d78a51c2a0138c6f85e1
+    # stdin_open: true
+    # tty: true
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17
+    restart: always
+    container_name: todo-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: tododb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
