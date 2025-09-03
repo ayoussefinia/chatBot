@@ -1,7 +1,7 @@
 // pages/api/todos.js
 import { Client } from "pg";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "./auth/[...nextauth]";
+import { authOptions } from "../../lib/auth";
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
