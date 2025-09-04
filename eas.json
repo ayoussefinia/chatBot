@@ -13,9 +13,14 @@
     },
     "production": {
       "ios": {
-        "buildConfiguration": "Release",
-        "scheme": "App"
+        "scheme": "App",
+        "buildConfiguration": "Release"
       }
+    }
+  },
+  "experimental": {
+    "ios": {
+      "projectRootDirectory": "ios/App"
     }
   },
   "submit": {
