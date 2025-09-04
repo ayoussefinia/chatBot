@@ -10,6 +10,9 @@
       "ios": {
         "scheme": "App",
         "buildConfiguration": "Debug"
+      },
+      "android": {
+        "gradleCommand": ":app:assembleDebug"
       }
     },
     "preview": {
@@ -17,21 +20,19 @@
       "ios": {
         "scheme": "App",
         "buildConfiguration": "Release"
+      },
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
       }
     },
     "production": {
       "ios": {
         "scheme": "App",
         "buildConfiguration": "Release"
+      },
+      "android": {
+        "gradleCommand": ":app:bundleRelease"
       }
-    }
-  },
-  "builds": {
-    "ios": {
-      "projectRootDirectory": "ios/App"
-    },
-    "android": {
-      "projectRootDirectory": "android"
     }
   },
   "submit": {

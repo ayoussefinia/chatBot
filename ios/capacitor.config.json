@@ -1,0 +1,10 @@
+{
+	"appId": "com.myapp.todo",
+	"appName": "TodoApp",
+	"webDir": "out",
+	"server": {
+		"url": "https://todo-29ni.onrender.com",
+		"cleartext": true
+	},
+	"packageClassList": []
+}
