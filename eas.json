@@ -6,10 +6,18 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "ios": {
+        "scheme": "App",
+        "buildConfiguration": "Debug"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "ios": {
+        "scheme": "App",
+        "buildConfiguration": "Release"
+      }
     },
     "production": {
       "ios": {
@@ -18,9 +26,12 @@
       }
     }
   },
-  "experimental": {
+  "builds": {
     "ios": {
       "projectRootDirectory": "ios/App"
+    },
+    "android": {
+      "projectRootDirectory": "android"
     }
   },
   "submit": {
