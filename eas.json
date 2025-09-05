@@ -8,9 +8,6 @@
       "android": {
         "buildType": "apk"
       }
-    },
-    "environment": {
-      "java": "17"
     }
   },
   "submit": {
