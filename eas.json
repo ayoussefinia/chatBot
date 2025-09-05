@@ -7,8 +7,12 @@
     "production": {
       "ios": {
         "scheme": "App",
-        "buildConfiguration": "Release"
+        "buildConfiguration": "Release",
+        "workspace": "ios/App/App.xcworkspace"
       }
     }
+  },
+  "submit": {
+    "production": {}
   }
 }
