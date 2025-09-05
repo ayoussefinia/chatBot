@@ -4,38 +4,11 @@
     "appVersionSource": "remote"
   },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "ios": {
-        "scheme": "App",
-        "buildConfiguration": "Debug"
-      },
-      "android": {
-        "gradleCommand": ":app:assembleDebug"
-      }
-    },
-    "preview": {
-      "distribution": "internal",
-      "ios": {
-        "scheme": "App",
-        "buildConfiguration": "Release"
-      },
-      "android": {
-        "gradleCommand": ":app:assembleRelease"
-      }
-    },
     "production": {
       "ios": {
         "scheme": "App",
         "buildConfiguration": "Release"
-      },
-      "android": {
-        "gradleCommand": ":app:bundleRelease"
       }
     }
-  },
-  "submit": {
-    "production": {}
   }
 }
