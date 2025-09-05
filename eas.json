@@ -7,13 +7,15 @@
     "production": {
       "android": {
         "buildType": "apk"
-      },
-      "environment": {
-        "java": "17"
       }
     }
   },
   "submit": {
     "production": {}
+  },
+  "build": {
+    "environment": {
+      "java": "17"
+    }
   }
 }
