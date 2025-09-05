@@ -15,7 +15,7 @@
     "preview": {
       "distribution": "internal",
       "ios": {
-        "scheme": "App",
+        "scheme": "TodoApp",
         "buildConfiguration": "Release"
       }
     },
