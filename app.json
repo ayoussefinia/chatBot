@@ -10,6 +10,11 @@
     "android": {
       "package": "com.alex.todo",
       "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "56b7e733-d7b3-4a3f-aab2-e3f628ddd7ba"
+      }
     }
   }
 }
