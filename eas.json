@@ -1,15 +1,19 @@
 {
   "cli": {
-    "version": ">= 3.0.0",
+    "version": ">= 7.0.0",
     "appVersionSource": "remote"
   },
   "build": {
     "production": {
-      "ios": {
-        "scheme": "TodoApp",
-        "buildConfiguration": "Release"
+      "android": {
+        "buildType": "apk",
+        "java": {
+          "version": 17
+        }
       }
     }
   },
-  "submit": { "production": {} }
+  "submit": {
+    "production": {}
+  }
 }
