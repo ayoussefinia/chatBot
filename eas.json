@@ -1,15 +1,15 @@
 {
   "cli": {
-    "version": ">= 7.0.0",
+    "version": ">= 16.0.0",
     "appVersionSource": "remote"
   },
-  "build": {
-    "production": {
-      "android": {
-        "buildType": "apk"
-      },
-      "environment": {
-        "java": "17"
+  "builds": {
+    "android": {
+      "production": {
+        "buildType": "apk",
+        "env": {
+          "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64"
+        }
       }
     }
   },
