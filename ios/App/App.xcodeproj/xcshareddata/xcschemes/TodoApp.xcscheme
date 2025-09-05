@@ -15,7 +15,7 @@
             buildForAnalyzing="YES">
             <BuildableReference
                BuildableIdentifier="primary"
-               BlueprintIdentifier="504EC3161FED79650016851F" 
+               BlueprintIdentifier="504EC3031FED79650016851F"
                BuildableName="App.app"
                BlueprintName="App"
                ReferencedContainer="container:App.xcodeproj">
@@ -23,4 +23,35 @@
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
+   <TestAction
+      buildConfiguration="Debug"
+      selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv="YES">
+   </TestAction>
+   <LaunchAction
+      buildConfiguration="Debug"
+      selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle="0"
+      useCustomWorkingDirectory="NO"
+      ignoresPersistentStateOnLaunch="NO"
+      debugDocumentVersioning="YES"
+      debugServiceExtension="internal"
+      allowLocationSimulation="YES">
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration="Release"
+      shouldUseLaunchSchemeArgsEnv="YES"
+      savedToolIdentifier=""
+      useCustomWorkingDirectory="NO"
+      debugDocumentVersioning="YES">
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration="Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration="Release"
+      revealArchiveInOrganizer="YES">
+   </ArchiveAction>
 </Scheme>
