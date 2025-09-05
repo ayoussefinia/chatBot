@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">TodoApp</string>
     <string name="title_activity_main">TodoApp</string>
-    <string name="package_name">com.myapp.todo</string>
-    <string name="custom_url_scheme">com.myapp.todo</string>
+    <string name="package_name">com.chatbot.nextjs.alex</string>
+    <string name="custom_url_scheme">com.chatbot.nextjs.alex</string>
 </resources>

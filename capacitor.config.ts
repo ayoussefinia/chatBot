@@ -1,7 +1,7 @@
 import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.myapp.todo",
+  appId: "com.nextjs.alex.todo",
   appName: "TodoApp",
   webDir: "out", // fallback, but won’t be used for SSR
   server: {

@@ -1,10 +1,10 @@
 {
-	"appId": "com.myapp.todo",
-	"appName": "TodoApp",
-	"webDir": "out",
-	"server": {
-		"url": "https://todo-29ni.onrender.com",
-		"cleartext": true
-	},
-	"packageClassList": []
+  "appId": "com.chatbot.nextjs.alex",
+  "appName": "TodoApp",
+  "webDir": "out",
+  "server": {
+    "url": "https://todo-29ni.onrender.com",
+    "cleartext": true
+  },
+  "packageClassList": []
 }

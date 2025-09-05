@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.myapp.todo"
+    namespace "com.chatbot.nextjs.alex"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.myapp.todo"
+        applicationId "com.chatbot.nextjs.alex"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

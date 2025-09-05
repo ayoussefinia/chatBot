@@ -1,4 +1,4 @@
-package com.myapp.todo;
+package com.chatbot.nextjs.alex;
 
 import com.getcapacitor.BridgeActivity;
 
