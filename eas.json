@@ -1,0 +1,19 @@
+{
+  "cli": {
+    "version": ">= 7.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "apk"
+      },
+      "environment": {
+        "java": "17"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

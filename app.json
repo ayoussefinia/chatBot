@@ -2,6 +2,11 @@
   "expo": {
     "name": "todo-nextjs",
     "slug": "todo-nextjs",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "850fd1bf-c6eb-45af-81e9-fc2605fb95c7"
+      }
+    }
   }
 }
