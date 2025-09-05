@@ -6,10 +6,10 @@
   "build": {
     "production": {
       "android": {
-        "buildType": "apk",
-        "java": {
-          "version": 17
-        }
+        "buildType": "apk"
+      },
+      "environment": {
+        "java": "17"
       }
     }
   },
