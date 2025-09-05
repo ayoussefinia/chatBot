@@ -1,8 +1,5 @@
 {
-  "cli": {
-    "version": ">= 16.18.0",
-    "appVersionSource": "remote"
-  },
+  "cli": { "version": ">= 16.18.0", "appVersionSource": "remote" },
   "build": {
     "production": {
       "ios": {
@@ -10,5 +7,6 @@
         "buildConfiguration": "Release"
       }
     }
-  }
+  },
+  "submit": { "production": {} }
 }
