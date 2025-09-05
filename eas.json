@@ -4,11 +4,25 @@
     "appVersionSource": "remote"
   },
   "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "scheme": "App",
+        "buildConfiguration": "Debug"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "scheme": "App",
+        "buildConfiguration": "Release"
+      }
+    },
     "production": {
       "ios": {
         "scheme": "App",
-        "buildConfiguration": "Release",
-        "workspace": "ios/App/App.xcworkspace"
+        "buildConfiguration": "Release"
       }
     }
   },
