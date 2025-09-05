@@ -1,9 +1,15 @@
 {
   "expo": {
-    "extra": {
-      "eas": {
-        "projectId": "56b7e733-d7b3-4a3f-aab2-e3f628ddd7ba"
-      }
+    "name": "todo-nextjs",
+    "slug": "todo-nextjs",
+    "version": "1.0.0",
+    "ios": {
+      "bundleIdentifier": "com.alex.todo",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.alex.todo",
+      "versionCode": 1
     }
   }
 }
