@@ -6,14 +6,16 @@ export default function Home() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(true);
-
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     fetchTodos();
   }, []);
 
   async function fetchTodos() {
     setLoading(true);
-    const res = await fetch("/api/todos");
+
+    fetch(`${API_URL}/api/todos`);
+
     const data = await res.json();
     setTodos(data);
     setLoading(false);
@@ -22,7 +24,7 @@ export default function Home() {
   async function addTodo(e) {
     e?.preventDefault();
     if (!title.trim()) return;
-    const res = await fetch("/api/todos", {
+    const res = await fetch(`${API_URL}/api/todos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title.trim() }),
@@ -35,7 +37,7 @@ export default function Home() {
   async function toggleCompleted(id) {
     const todo = todos.find((t) => t.id === id);
     if (!todo) return;
-    const res = await fetch("/api/todos", {
+    const res = await fetch(`${API_URL}/api/todos`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, completed: !todo.completed }),
@@ -45,7 +47,7 @@ export default function Home() {
   }
 
   async function deleteTodo(id) {
-    await fetch(`/api/todos?id=${encodeURIComponent(id)}`, {
+    await fetch(`${API_URL}/api/todos?id=${encodeURIComponent(id)}`, {
       method: "DELETE",
     });
     setTodos((prev) => prev.filter((t) => t.id !== id));
