@@ -1,21 +1,22 @@
 {
-  "cli": {
-    "version": ">= 7.0.0",
-    "appVersionSource": "remote"
-  },
+  "cli": { "version": ">= 7.0.0", "appVersionSource": "remote" },
   "build": {
     "production": {
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "image": "ubuntu-22.04-jdk-17-ndk-r26b"
       }
     }
   },
-  "submit": {
-    "production": {}
+  "submit": { "production": {} },
+
+  "preview": {
+    "distribution": "internal"
   },
-  "hooks": {
-    "build": {
-      "pre-build": "eas-hooks/pre-build.sh"
-    }
+  "production": {
+    "autoIncrement": true
+  },
+  "scripts": {
+    "eas-build-pre-install": "bash eas-hooks/pre-build.sh"
   }
 }
