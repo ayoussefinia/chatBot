@@ -12,5 +12,10 @@
   },
   "submit": {
     "production": {}
+  },
+  "hooks": {
+    "build": {
+      "pre-build": "eas-hooks/pre-build.sh"
+    }
   }
 }
