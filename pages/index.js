@@ -14,7 +14,7 @@ export default function Home() {
   async function fetchTodos() {
     setLoading(true);
 
-    fetch(`${API_URL}/api/todos`);
+    const res = await fetch(`${API_URL}/api/todos`);
 
     const data = await res.json();
     setTodos(data);
@@ -56,6 +56,10 @@ export default function Home() {
   if (!session) {
     return (
       <div style={{ maxWidth: 720, margin: "2rem auto", padding: "1rem" }}>
+        {console.log("process.env: " + String(process.env))}
+        {console.log(
+          "process.env.NEXTAUTH_URL" + process.env.NEXT_PUBLIC_API_URL
+        )}
         <h1>Please sign in</h1>
         <button onClick={() => signIn()}>Sign in</button>
       </div>
