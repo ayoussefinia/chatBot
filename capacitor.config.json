@@ -1,5 +1,10 @@
 {
   "appId": "com.example.app",
   "appName": "todo-nextjs",
-  "webDir": "public"
+  "webDir": "out",
+  "server": {
+    "url": "https://todo-29ni.onrender.com",
+    "cleartext": false,
+    "androidScheme": "https"
+  }
 }
