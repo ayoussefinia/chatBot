@@ -27,3 +27,32 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+// android/build.gradle (project-level)
+
+subprojects { subproject ->
+  afterEvaluate {
+    if (subproject.hasProperty('android')) {
+      subproject.android {
+        compileOptions {
+          sourceCompatibility JavaVersion.VERSION_17
+          targetCompatibility JavaVersion.VERSION_17
+        }
+        // If the module uses Kotlin Android plugin:
+        if (ext.has('kotlin_version')) {
+          kotlinOptions { jvmTarget = "17" }
+        }
+      }
+    }
+    // Force Java release if the task tries to use 21
+    tasks.matching { it.name.startsWith('compile') && it.hasProperty('options') }.configureEach {
+      if (it.hasProperty('options') && it.options.hasProperty('release')) {
+        it.options.release = 17
+      }
+    }
+    // Kotlin tasks in Java/Kotlin-only subprojects
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile).configureEach {
+      kotlinOptions { jvmTarget = "17" }
+    }
+  }
+}
