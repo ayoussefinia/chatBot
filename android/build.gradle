@@ -1,7 +1,6 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// android/build.gradle
 
 buildscript {
-    
     repositories {
         google()
         mavenCentral()
@@ -9,9 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:8.7.2'
         classpath 'com.google.gms:google-services:4.4.2'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24'  // ← add this
     }
 }
 
@@ -28,31 +25,25 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-// android/build.gradle (project-level)
-
 subprojects { subproject ->
-  afterEvaluate {
-    if (subproject.hasProperty('android')) {
-      subproject.android {
-        compileOptions {
-          sourceCompatibility JavaVersion.VERSION_17
-          targetCompatibility JavaVersion.VERSION_17
+    afterEvaluate {
+        if (subproject.hasProperty('android')) {
+            subproject.android {
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
+                }
+            }
         }
-        // If the module uses Kotlin Android plugin:
-        if (ext.has('kotlin_version')) {
-          kotlinOptions { jvmTarget = "17" }
+        // Force Java release=17 if any task tries another
+        tasks.matching { it.name.startsWith('compile') && it.hasProperty('options') }.configureEach {
+            if (it.hasProperty('options') && it.options.hasProperty('release')) {
+                it.options.release = 17
+            }
         }
-      }
+        // Ensure all Kotlin compiles target 17
+        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile).configureEach {
+            kotlinOptions { jvmTarget = "17" }
+        }
     }
-    // Force Java release if the task tries to use 21
-    tasks.matching { it.name.startsWith('compile') && it.hasProperty('options') }.configureEach {
-      if (it.hasProperty('options') && it.options.hasProperty('release')) {
-        it.options.release = 17
-      }
-    }
-    // Kotlin tasks in Java/Kotlin-only subprojects
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile).configureEach {
-      kotlinOptions { jvmTarget = "17" }
-    }
-  }
 }
