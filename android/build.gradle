@@ -35,12 +35,7 @@ subprojects { subproject ->
                 }
             }
         }
-        // Force Java release=17 if any task tries another
-        tasks.matching { it.name.startsWith('compile') && it.hasProperty('options') }.configureEach {
-            if (it.hasProperty('options') && it.options.hasProperty('release')) {
-                it.options.release = 17
-            }
-        }
+
         // Ensure all Kotlin compiles target 17
         tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile).configureEach {
             kotlinOptions { jvmTarget = "17" }
